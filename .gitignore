@@ -1,0 +1,22 @@
+# Binaries
+mediakit
+mediakit.exe
+yt-dlp.exe
+
+# Credentials
+instagram_cookies.txt
+
+# Working directories
+output/
+buf/
+rename/
+ig/
+yt/
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.sh
+
+config.yaml
