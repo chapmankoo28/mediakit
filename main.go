@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Printf("\nDownload and Format Helper")
 	fmt.Printf(" (using config: %s)\n", filepath.Base(cfgPath))
-	fmt.Println("  1) Media Downloader")
+	fmt.Println("  1) Video Downloader")
 	fmt.Println("  2) Instagram Downloader")
 	fmt.Println("  3) Renamer")
 	fmt.Println()

@@ -39,7 +39,7 @@ func YtdlpDownloader() (string, error) {
 		}
 	}
 
-	url := reader.ReadInput("Input the YouTube video URL: ")
+	url := reader.ReadInput("Input the video URL: ")
 
 	var args []string
 
