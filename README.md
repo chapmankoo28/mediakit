@@ -53,6 +53,15 @@ go build -o mediakit.exe
 $env:GOOS="linux"; $env:GOARCH="amd64"; go build; Remove-Item Env:GOOS; Remove-Item Env:GOARCH
 ```
 
+### Renamer
+
+Renames files using a SHA-256 hash prefix.
+
+| Mode       | Output format                          | Use case                        |
+| ---------- | -------------------------------------- | ------------------------------- |
+| Default    | `<group_hash>_<seq>_<file_hash>.<ext>` | Files belong to the same series |
+| Standalone | `<file_hash>_1.<ext>`                  | Each file renamed independently |
+
 ### Run it
 
 ```bash

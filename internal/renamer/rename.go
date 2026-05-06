@@ -12,7 +12,7 @@ import (
 )
 
 func RenameFiles() (string, error) {
-	renewMode := reader.ConfirmAction("Enable renew mode?", false)
+	standaloneMode := reader.ConfirmAction("Standalone mode? (each file renamed independently, no group hash)", false)
 
 	cfg, err := config.LoadConfig()
 	if err != nil {
@@ -50,7 +50,7 @@ func RenameFiles() (string, error) {
 	}
 
 	fmt.Print("Files to be renamed: ")
-	if renewMode {
+	if standaloneMode {
 		fmt.Print("(renew mode: each file will have a new hex code)")
 	}
 	fmt.Println()
@@ -67,7 +67,7 @@ func RenameFiles() (string, error) {
 	fileHashes := make(map[string]string)
 	var seriesHash string
 
-	if renewMode {
+	if standaloneMode {
 		for _, fName := range fileToRename {
 			file, err := os.Open(filepath.Join(inputDir, fName))
 			if err != nil {
@@ -114,7 +114,7 @@ func RenameFiles() (string, error) {
 		fmt.Printf("Org name: %v\n", file)
 
 		var newFileName string
-		if renewMode {
+		if standaloneMode {
 			newFileName = fmt.Sprintf("%s_1%s", fileHash, suffix)
 		} else {
 			newFileName = fmt.Sprintf("%s_%d_%s%s", seriesHash, count, fileHash, suffix)
@@ -147,7 +147,7 @@ func RenameFiles() (string, error) {
 
 		fmt.Println()
 
-		if !renewMode {
+		if !standaloneMode {
 			count++
 		}
 	}
