@@ -4,9 +4,14 @@ A simple tool for downloading and managing media files.
 
 ## Setup
 
-1. Install `deno` first for handling YouTube JS challenges.
+Install the following dependencies:
 
-2. Copy `config.example.yaml` to `config.yaml` and update it:
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for YouTube downloads (`pipx install yt-dlp`)
+    - Also requires `ffmpeg`
+- [`gallery-dl`](https://github.com/mikf/gallery-dl) for Instagram downloads (`pipx install gallery-dl`)
+- [`deno`](https://deno.com) for handling YouTube JS challenges
+
+Copy `config.example.yaml` to `config.yaml` and update it:
 
 ```yaml
 downloader:
@@ -48,7 +53,7 @@ $env:GOOS="linux"; $env:GOARCH="amd64"; go build; Remove-Item Env:GOOS; Remove-I
 ### Run it
 
 ```bash
-# MacOS or Linux
+# macOS or Linux
 ./mediakit
 
 # Windows
