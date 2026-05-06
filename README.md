@@ -6,9 +6,12 @@ A simple tool for downloading and managing media files.
 
 Install the following dependencies:
 
-- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for YouTube downloads (`pipx install yt-dlp`)
-    - Also requires `ffmpeg`
-- [`gallery-dl`](https://github.com/mikf/gallery-dl) for Instagram downloads (`pipx install gallery-dl`)
+- [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for video downloads
+    - `pipx install yt-dlp`
+    - Requires [`ffmpeg`](https://www.ffmpeg.org/)
+    - Supports YouTube, BiliBili, etc. ([see full list](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md))
+- [`gallery-dl`](https://github.com/mikf/gallery-dl) for Instagram downloads
+    - `pipx install gallery-dl`
 - [`deno`](https://deno.com) for handling YouTube JS challenges
 
 Copy `config.example.yaml` to `config.yaml` and update it:
