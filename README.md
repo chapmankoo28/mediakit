@@ -7,33 +7,34 @@ A simple tool for downloading and managing media files.
 Install the following dependencies:
 
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for video downloads
-    - `pipx install yt-dlp`
-    - Requires [`ffmpeg`](https://www.ffmpeg.org/)
-    - Supports YouTube, BiliBili, etc. ([see full list](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md))
+  - `pipx install yt-dlp`
+  - Requires [`ffmpeg`](https://www.ffmpeg.org/)
+  - Supports YouTube, BiliBili, etc. ([see full list](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md))
 - [`gallery-dl`](https://github.com/mikf/gallery-dl) for Instagram downloads
-    - `pipx install gallery-dl`
+  - `pipx install gallery-dl`
 - [`deno`](https://deno.com) for handling YouTube JS challenges
 
 Copy `config.example.yaml` to `config.yaml` and update it:
 
 ```yaml
 downloader:
-    # required for Instagram downloads
-    cookies_file_path: instagram_cookies.txt
-    ig_output_path: IG
-    yt_output_path: YT
-    # Available values: "720" (Default), "1080", "best"
-    yt_download_quality: "720"
+  # required for Instagram downloads
+  cookies_file_path: instagram_cookies.txt
 
-    # Available values: "mp3", "m4a", "opus", "mp4" (Default), "webm"
-    yt_download_format: mp4
+  ig_output_path: IG
+  yt_output_path: YT
+
+  # Available values: "720" (Default), "1080", "best"
+  yt_download_quality: '720'
+  # Available values: "mp4" (Default), "webm", "mp3", "m4a", "opus"
+  yt_download_format: mp4
 
 file_checker:
-    check_folder_path: output
+  check_folder_path: output
 
 rename_files:
-    input_path: rename
-    output_path: output
+  input_path: rename
+  output_path: output
 ```
 
 ## Usage
