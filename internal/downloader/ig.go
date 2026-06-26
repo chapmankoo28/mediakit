@@ -43,6 +43,9 @@ func IgDownloader() (string, error) {
 	}
 
 	url := reader.ReadInput("Input the Instagram post URL: ")
+	if url == "" {
+		return "", fmt.Errorf("URL is empty")
+	}
 
 	args := []string{"--cookies", cookies, "-D", outputPath, url}
 	fmt.Println("args:", args)

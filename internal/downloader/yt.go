@@ -40,6 +40,9 @@ func YtdlpDownloader() (string, error) {
 	}
 
 	url := reader.ReadInput("Input the video URL: ")
+	if url == "" {
+		return "", fmt.Errorf("URL is empty")
+	}
 
 	var args []string
 
