@@ -49,14 +49,17 @@ func RenameFiles() (string, error) {
 		return "", fmt.Errorf("no files found in directory '%v'", inputDir)
 	}
 
+	fmt.Println()
 	fmt.Print("Files to be renamed: ")
 	if standaloneMode {
 		fmt.Print("(renew mode: each file will have a new hex code)")
 	}
 	fmt.Println()
+
 	for i, f := range fileToRename {
-		fmt.Printf("%3d. %s\n", i+1, f)
+		fmt.Printf("%5d) %s\n", i+1, f)
 	}
+	fmt.Println()
 
 	if !reader.ConfirmAction("Rename these files?", true) {
 		return "Aborted.", nil
@@ -106,9 +109,7 @@ func RenameFiles() (string, error) {
 	count := 1
 	for _, fName := range fileToRename {
 		file := filepath.Join(inputDir, fName)
-
 		fileHash := fileHashes[fName]
-
 		suffix := filepath.Ext(fName)
 
 		fmt.Printf("Org name: %v\n", file)
