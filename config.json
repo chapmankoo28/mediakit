@@ -1,0 +1,16 @@
+{
+  "downloader": {
+    "cookies_file_path": "instagram_cookies.txt",
+    "ig_output_path": "IG",
+    "yt_output_path": "YT",
+    "yt_download_quality": "720",
+    "yt_download_format": "m4a"
+  },
+  "file_checker": {
+    "check_folder_path": "output"
+  },
+  "rename_files": {
+    "input_path": "rename",
+    "output_path": "output"
+  }
+}

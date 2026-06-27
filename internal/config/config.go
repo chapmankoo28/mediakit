@@ -1,10 +1,9 @@
 package config
 
 import (
+	"encoding/json"
 	"os"
 	"path/filepath"
-
-	"github.com/goccy/go-yaml"
 )
 
 type Config struct {
@@ -30,6 +29,8 @@ type RenameFiles struct {
 	OutputPath string `json:"output_path"`
 }
 
+const configFileName = "config.json"
+
 func LoadConfig() (*Config, error) {
 	var cfg Config
 
@@ -43,10 +44,7 @@ func LoadConfig() (*Config, error) {
 		return nil, err
 	}
 
-	// if err = json.Unmarshal(configFile, &cfg); err != nil {
-	// return nil, err
-	// }
-	if err = yaml.Unmarshal([]byte(configFile), &cfg); err != nil {
+	if err = json.Unmarshal(configFile, &cfg); err != nil {
 		return nil, err
 	}
 
@@ -65,7 +63,7 @@ func FindConfigFilepath() (string, error) {
 	}
 
 	for {
-		configPath := filepath.Join(dir, "config.yaml")
+		configPath := filepath.Join(dir, configFileName)
 
 		if fileExists(configPath) {
 			return configPath, nil

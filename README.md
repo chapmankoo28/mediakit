@@ -14,27 +14,29 @@ Install the following dependencies:
   - `pipx install gallery-dl`
 - [`deno`](https://deno.com) for handling YouTube JS challenges
 
-Copy `config.example.yaml` to `config.yaml` and update it:
+Copy `config.example.json` to `config.json` and update it:
 
-```yaml
-downloader:
-  # required for Instagram downloads
-  cookies_file_path: instagram_cookies.txt
+```json
+{
+  "downloader": {
+    // required for Instagram downloads
+    "cookies_file_path": "instagram_cookies.txt",
+    "ig_output_path": "IG",
+    "yt_output_path": "YT",
 
-  ig_output_path: IG
-  yt_output_path: YT
-
-  # Available values: "720" (Default), "1080", "best"
-  yt_download_quality: '720'
-  # Available values: "mp4" (Default), "webm", "mp3", "m4a", "opus"
-  yt_download_format: mp4
-
-file_checker:
-  check_folder_path: output
-
-rename_files:
-  input_path: rename
-  output_path: output
+    // Available values: "720" (Default), "1080", "best"
+    "yt_download_quality": "720",
+    // Available values: "mp4" (Default), "webm", "mp3", "m4a", "opus"
+    "yt_download_format": "mp4"
+  },
+  "file_checker": {
+    "check_folder_path": "output"
+  },
+  "rename_files": {
+    "input_path": "rename",
+    "output_path": "output"
+  }
+}
 ```
 
 ## Usage
