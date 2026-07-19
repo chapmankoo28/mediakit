@@ -4,17 +4,17 @@ A simple tool for downloading and managing media files.
 
 ## Setup
 
-Install the following dependencies:
+Install the following dependencies first:
 
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for video downloads
-  - `pipx install yt-dlp`
-  - Requires [`ffmpeg`](https://www.ffmpeg.org/)
+  - Install using `pipx install yt-dlp`
   - Supports YouTube, BiliBili, etc. ([see full list](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md))
+- [`ffmpeg`](https://www.ffmpeg.org/) for video or audio processing
 - [`gallery-dl`](https://github.com/mikf/gallery-dl) for Instagram downloads
-  - `pipx install gallery-dl`
+  - Install using `pipx install gallery-dl`
 - [`deno`](https://deno.com) for handling YouTube JS challenges
 
-Copy `config.example.json` to `config.json` and update it:
+Then, copy `config.example.json` to `config.json` and update it with your preferred settings:
 
 ```json
 {
